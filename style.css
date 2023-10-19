@@ -1,0 +1,131 @@
+@font-face {
+	font-family: "Nunito";
+	src: url("Nunito.ttf");
+}
+
+body {
+	margin: 0;
+  	padding : 20px;
+	font-family: Nunito, Arial, sans-serif;
+	font-weight: 400;
+}
+
+* {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+
+input[type=number] {
+	width: 5em;
+}
+
+#container>div{
+    outline: 1px solid black;
+    width: 1030px;
+	margin-bottom: 10px;
+}
+
+#container>div>div{
+    outline: 1px solid black;
+    outline-offset: -1px;
+}
+
+#top {
+    height: 400px;
+	display: flex;
+}
+
+#display-canvas{
+	width: 1000px;
+	height: 400px;
+}
+
+#controller {
+    position: relative;
+    padding: 5px;
+    height: 390px;
+}
+
+#slider-setpoint {
+    -webkit-appearance: slider-vertical;
+    width: 20px;
+    height: 390px;
+    padding: 0;
+    margin: 0;
+}
+
+#gains{
+	display: flex;
+}
+
+#gains>div{
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#gains>div>*{
+	margin: 5px;
+}
+
+#gains>div>span{
+	width: 1em;
+}
+
+#play-pause{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#play-pause>*{
+	margin: 5px;
+}
+
+#play-pause label {
+	display: block;
+	box-sizing: border-box;
+	width: 0;
+	height: 2em;
+	border-color: transparent transparent transparent #202020;
+	transition: 100ms all ease;
+	cursor: pointer;
+	border-style: double;
+	border-width: 0 0 0 1.6em;
+}
+
+#play-pause>#running {
+	display: none;
+}
+
+#play-pause>#running:checked ~ label {
+	border-style: solid;
+	border-width: 1em 0 1em 1.6em;
+}
+
+#play-pause>span:after{
+	display: block;
+	content: "Running";
+	width: 4em;
+	text-align: center;
+}
+
+#play-pause>#running:checked ~ span:after {
+	content: "Paused";
+}
+
+#button-container {
+	display: flex;
+}
+#play-pause {
+	flex-grow: 1;
+}
+
+#reset {
+	border: 0;
+	outline: none;
+	background-color: transparent;
+}

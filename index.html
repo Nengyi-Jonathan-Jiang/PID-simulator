@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>PID Simulator</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="top">
+                <div id="display">
+					<canvas id="display-canvas" width="1000" height="400"></canvas>
+                </div>
+                <div id="controller">
+                    <input class="vertical" type="range" id="slider-setpoint" min="-2" max="2" step="0.01"/>
+                </div>
+            </div>
+            <div id="gains">
+                <div>
+                    <span>kp</span>
+                    <input type="range" id="slider-kp" min="0" max="0.05" step="0.001" value="0.01"/>
+                    <input type="number" id="input-kp"/>
+                </div>
+                <div>
+                    <span>ki</span>
+                    <input type="range" id="slider-ki" min="0" max="0.005" step="0.0001" value="0"/>
+                    <input type="number" id="input-ki"/>
+                </div>
+                <div>
+                    <span>kd</span>
+                    <input type="range" id="slider-kd" min="0" max="0.1" step="0.001" value="0" />
+                    <input type="number" id="input-kd"/>
+                </div>
+            </div>
+            <div id="button-container">
+                <div id="play-pause">
+                    <input id="running" type="checkbox"/>
+                    <span id="running-state"></span>
+                    <label for="running" tabindex="1"></label>
+                </div>
+				<div id="reset">
+					<button id="reset">Reset</button>
+				</div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+</html>
